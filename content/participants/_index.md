@@ -1,16 +1,7 @@
-+++
-authors = ["ATB-authors"]
-description = "The AllTheBacteria project is the joint work of many people across the globe"
-title = "Participants"
-
-[paige.pages]
-disable_collections = true
-disable_pages = true
-disable_sections = true
-disable_reading_time = true
-disable_word_count = true
-disable_authors = true
-+++
+---
+title: Participants
+---
+The AllTheBacteria project is the joint work of many people across the globe:
 
 - Daniel Anderson (EMBL-EBI)
 - Maria Luiza Andreani
