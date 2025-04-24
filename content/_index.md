@@ -8,7 +8,7 @@ toc: false
 AllTheBacteria is a large-scale, collaborative, open-access project that assembles, annotates, and catalogs millions of bacterial and archaeal genomes from public sequencing data.
 
 {{< callout type="info" >}}
-  2,440,377 assemblies in current release 0.2+2024-08
+  2,440,377 assemblies in total (as of August 2024)
 {{< /callout >}}
 
 {{< figure
