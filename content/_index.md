@@ -7,6 +7,10 @@ toc: false
 
 AllTheBacteria is a large-scale, collaborative, open-access project that assembles, annotates, and catalogs millions of bacterial and archaeal genomes from public sequencing data.
 
+{{< callout type="info" >}}
+  2,440,377 assemblies in current release 0.2+2024-08
+{{< /callout >}}
+
 {{< figure
   src="images/ecoli.jpg"
   alt="E coli with false colour"
@@ -20,8 +24,5 @@ We provide multiple types of search tools (e.g. [sketchlib](https://github.com/b
 
 Please feel free to use the data, and to join us if you see analyses on your favourite species that would be valuable to all.
 
-{{< callout emoji="🧫" >}}
-  AllTheBacteria is still under active development and resources are still being added to
-{{< /callout >}}
 
 

@@ -52,3 +52,6 @@ layout: hextra-home
 
 {{< /hextra/feature-grid >}}
 
+{{< callout emoji="🧫" >}}
+  AllTheBacteria is still under active development and so resources are still being added to, though versioned resources are stable.
+{{< /callout >}}
