@@ -16,15 +16,9 @@ searching and alignment to the full dataset (i.e. a BLAST-like search) using seq
 
   {{< tab >}}
 
-    ### Local search after indexing assemblies yourself 
-   
-    This option requires a small (80Gb) download, but indexing the assemblies took 150Gb RAM, and 47 hours with 48 CPUs.
-    Details on how to do this are here:
-    https://allthebacteria.readthedocs.io/en/latest/lexicmap.html#building-an-index-and-searching-locally
-    
-    ### Local search with pre-built index 
+    ### Local search with pre-built index
     This option avoids the high RAM indexing, but it does mean you have a very large (5 Tb) download.
-     
+
     Install `awscli` via conda.
     ```
     conda install -c conda-forge awscli
@@ -59,6 +53,116 @@ searching and alignment to the full dataset (i.e. a BLAST-like search) using seq
     ```
 
     [Install](https://bioinf.shenwei.me/LexicMap/installation/>) and [search](https://bioinf.shenwei.me/LexicMap/tutorials/search/) with LexicMap.
+
+    ### Building an index and searching locally
+
+    This option requires a small (80Gb) download, but indexing the assemblies took 150Gb RAM, and 47 hours with 48 CPUs.
+
+    **Make sure you have enough disk space, at least 8 TB, >10 TB is preferred.**
+
+    Tools:
+
+    -  [LexicMap](https://bioinf.shenwei.me/LexicMap/installation/)
+    -  https://github.com/shenwei356/rush, for running jobs in parallel
+
+    Steps:
+
+    1. Downloading the list file of all [assemblies](https://osf.io/zxfmy/) in the latest version (v0.2 plus incremental versions).
+    ```
+    mkdir -p atb;
+    cd atb;
+
+    # Attention, the URL might change,
+    # please check in the browser: https://osf.io/zxfmy/files/osfstorage
+    wget https://osf.io/download/4yv85/ -O file_list.all.latest.tsv.gz
+    ```
+
+    If you only need to add assemblies from an incremental version,
+    please manually download the file list [here](https://osf.io/zxfmy/files/osfstorage>).
+
+    2. Downloading assembly tarball files.
+
+    ```
+    # Tarball file names and their URLs
+    zcat file_list.all.latest.tsv.gz | awk 'NR>1 {print $3"\t"$4}' | uniq > tar2url.tsv
+
+    # Download. If it's interrupted, just rerun the same command.
+    cat tar2url.tsv | rush --eta -j 2 -c -C download.rush 'wget -O {1} {2}'
+    ```
+
+    3. Decompressing all tarballs. The decompressed genomes are stored in
+    plain text, so we use `gzip` (can be replaced with faster `pigz`)
+    to compress them to save disk space.
+
+    ```
+    # {^tar.xz} is for removing the suffix "tar.xz"
+    ls *.tar.xz | rush --eta -c -C decompress.rush 'tar -Jxf {}; gzip -f {^.tar.xz}/*.fa'
+
+    cd ..
+    ```
+
+    After that, the assemblies directory would have multiple
+    subdirectories. When you give the directory to `lexicmap index -I`,
+    it can recursively scan (plain or gz/xz/zstd-compressed) genome
+    files. You can also give a file list with selected assemblies.
+    ```
+        $ tree atb | more
+        atb
+        ├── atb.assembly.r0.2.batch.1
+        │   ├── SAMD00013333.fa.gz
+        │   ├── SAMD00049594.fa.gz
+        │   ├── SAMD00195911.fa.gz
+        │   ├── SAMD00195914.fa.gz
+    ```
+
+    4. Prepare a file list of assemblies.
+
+    -  Just use `find` or [`fd`](https://github.com/sharkdp/fd) (much
+        faster).
+
+        ```
+        # find
+        find atb/ -name "*.fa.gz" > files.txt
+
+        # fd
+        fd .fa.gz$ atb/ > files.txt
+        ```
+
+        What it looks like:
+
+        ```
+        $ head -n 2 files.txt
+        atb/atb.assembly.r0.2.batch.1/SAMD00013333.fa.gz
+        atb/atb.assembly.r0.2.batch.1/SAMD00049594.fa.gz
+        ```
+
+    -  (Optional) Only keep assemblies of high-quality.
+        Please [click this link](https://osf.io/download/m26zn/) to
+        download the `hq_set.sample_list.txt.gz` file, or from this
+        [page](https://osf.io/h7wzy/files/osfstorage/).
+
+        ```
+        find atb/ -name "*.fa.gz" | grep -w -f <(zcat hq_set.sample_list.txt.gz) > files.txt
+        ```
+
+    5. Creating a LexicMap index ([tutorials](https://bioinf.shenwei.me/LexicMap/tutorials/index/>)).
+    It took 47h40m and 145GB RAM with 48 CPUs for 2.44 million ATB genomes.
+
+    ```
+    lexicmap index -S -X files.txt -O atb.lmi -b 25000 --log atb.lmi.log
+
+    # dirsize atb.lmi
+    atb.lmi: 5.24 TiB (5,758,875,365,595)
+        2.87 TiB      seeds
+        2.37 TiB      genomes
+        51.70 MiB      genomes.map.bin
+    156.28 KiB      masks.bin
+        61.02 KiB      genomes.chunks.bin
+            619 B      info.toml
+    ```
+
+    6. Searching with LexicMap ([tutorial](https://bioinf.shenwei.me/LexicMap/tutorials/search/)).
+
   {{< /tab >}}
 
   {{< tab >}}
