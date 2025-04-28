@@ -26,9 +26,12 @@ menu:
     - name: Participants
       pageRef: /participants
       weight: 2
-    - name: Docs ↗
-      url: "https://allthebacteria.readthedocs.io/en/latest/"
+    - name: Publications
+      pageRef: /publications
       weight: 3
+    - name: Docs
+      url: /docs
+      weight: 4
     - name: Search
       weight: 5
       params:
