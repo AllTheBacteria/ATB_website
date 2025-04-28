@@ -25,7 +25,7 @@ The AllTheBacteria project is the joint work of many people across the globe:
 - Oliver Schwengers (Justus Liebig University Giessen)
 - Liam Shaw (University of Oxford, University of Bristol)
 - Wei Shen (Chongqing Medical University)
-- Jacqualine Toussaint (EMBL-EBI)
+- Jacqueline Toussaint (EMBL-EBI)
 - Rachel Wheatley (Queen's University Belast)
 
 
