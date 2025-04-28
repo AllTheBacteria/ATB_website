@@ -15,8 +15,16 @@ searching and alignment to the full dataset (i.e. a BLAST-like search) using seq
 {{< tabs items="Local,AWS" >}}
 
   {{< tab >}}
-    ### Local search with pre-built index
 
+    ### Local search after indexing assemblies yourself 
+   
+    This option requires a small (80Gb) download, but indexing the assemblies took 150Gb RAM, and 47 hours with 48 CPUs.
+    Details on how to do this are here:
+    https://allthebacteria.readthedocs.io/en/latest/lexicmap.html#building-an-index-and-searching-locally
+    
+    ### Local search with pre-built index 
+    This option avoids the high RAM indexing, but it does mean you have a very large (5 Tb) download.
+     
     Install `awscli` via conda.
     ```
     conda install -c conda-forge awscli
