@@ -18,7 +18,7 @@ AllTheBacteria is a large-scale, collaborative, open-access project that assembl
   class="ma0 w-75"
 >}}
 
-Designed to support the global microbiology community, it provides standardized, high-quality genomic data, with some key analyses and annotations run consistently across the whole data (e.g. gene annotation and AMR gene detection), and other targeted tools run on specific species. 
+Designed to support the global microbiology community, it provides standardized, high-quality genomic data, with some key analyses and annotations run consistently across the whole data (e.g. gene annotation and AMR gene detection), and other targeted tools run on specific species.
 
 We provide multiple types of search tools (e.g. [sketchlib](https://github.com/bacpop/sketchlib.rust) and [sourmash](https://sourmash.readthedocs.io/en/latest/) for finding similar genomes to a query, and [Lexicmap](https://bioinf.shenwei.me/LexicMap/) for BLAST-style alignment to the full dataset).
 
