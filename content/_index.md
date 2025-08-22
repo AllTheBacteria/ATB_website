@@ -24,5 +24,11 @@ We provide multiple types of search tools (e.g. [sketchlib](https://github.com/b
 
 Please feel free to use the data, and to join us if you see analyses on your favourite species that would be valuable to all.
 
+{{< figure
+  src="images/ATB_outline.png"
+  alt="ATB analyses"
+  height=300
+  class="ma0 w-75"
+>}}
 
 
