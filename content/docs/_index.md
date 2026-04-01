@@ -6,6 +6,7 @@ toc: true
 
 - [Overview](/docs/overview/)
 - [Metadata and QC](/docs/sample_metadata/)
+- [OSF links](/docs/osf_links/)
 - [SQLite metadata](/docs/metadata_sqlite/)
 - [Assemblies](/docs/assemblies/)
 - [Species identification](/docs/species_id/)
