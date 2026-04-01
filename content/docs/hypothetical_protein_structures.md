@@ -1,6 +1,6 @@
 ---
 title: Hypothetical protein structures
-weight: 10
+weight: 110
 toc: true
 ---
 

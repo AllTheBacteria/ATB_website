@@ -1,6 +1,6 @@
 ---
 title: Sequence alignment with LexicMap
-weight: 13
+weight: 140
 toc: true
 ---
 

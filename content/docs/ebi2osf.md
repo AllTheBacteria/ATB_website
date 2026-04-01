@@ -1,6 +1,6 @@
 ---
 title: Migration from EBI FTP to OSF
-weight: 18
+weight: 190
 toc: true
 ---
 

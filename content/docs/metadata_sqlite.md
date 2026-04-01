@@ -1,6 +1,6 @@
 ---
 title: SQLite metadata
-weight: 3
+weight: 40
 toc: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Contributing to AllTheBacteria
-weight: 14
+weight: 150
 toc: true
 ---
 
@@ -156,33 +156,45 @@ some files will be too big. Please note:
   Unless they are far too big and can be obtained elsewhere (eg the
   AMRFinderplus database is small, but the Bakta database is huge).
 
-### GitHub pull request
+### GitHub pull requests
 
-Please send a pull request to the [AllTheBacteria github
-repository](https://github.com/AllTheBacteria/AllTheBacteria) that:
+Please send two pull requests:
 
-1.  refers to the GitHub issue related to the analysis (the issue you
-    originally made),
-2.  adds documentation to this website under `content/docs/`, and
-3.  includes reproducibility files.
+1.  A pull request to the [AllTheBacteria GitHub
+    repository](https://github.com/AllTheBacteria/AllTheBacteria) that:
+
+    - refers to the GitHub issue related to the analysis (the issue you
+      originally made)
+    - includes reproducibility files
+
+2.  A separate pull request to the [ATB_website GitHub
+    repository](https://github.com/AllTheBacteria/ATB_website) that:
+
+    - adds or updates the end-user documentation for your analysis
 
 Notes on the documentation:
 
 - this should be instructions for any user who will want to download
   your analysis files and use them.
-- The documentation is in the `docs/` folder.
+- The documentation is in the `content/docs/` folder of the
+  `ATB_website` repository.
 - If you are adding a new page, add a new Markdown file in
   `content/docs/`, with Hugo front matter including `title`, `weight`,
-  and `toc`. For example, a new page might be `content/docs/foo.md`.
+  and `toc`. Here, `weight` is used for page ordering in the docs
+  navigation, not font styling. For example, a new page might be
+  `content/docs/foo.md`.
 - The page `title` is what will appear in the docs navigation. Please
   name this sensibly.
 - The `weight` in the front matter controls the order shown in the docs
   navigation. If you add a new file, give it a weight that keeps the
-  section order sensible.
+  section order sensible. We currently use gaps such as 10, 20, 30, so
+  you do not have to renumber every page: for example, inserting a page
+  at 15 between 10 and 20 makes later additions easier.
 - You can build a local copy of the documentation by running
   `hugo`, or preview it locally with `hugo server`.
-- when the pull request is merged, this website will need to be
-  rebuilt/deployed with the changes.
+- documentation changes should be reviewed and merged via a pull request
+  to `ATB_website`, separately from the analysis/reproducibility pull
+  request to `AllTheBacteria`.
 
 Notes on reproducibility files:
 
@@ -195,6 +207,7 @@ Notes on reproducibility files:
   other ways specific to how/where you ran, making them hard to run for
   others, please note this in the README.
 
-In addition to checking the GitHub files in the pull request, the files
-added to OSF will also be checked. Once the PR is accepted, that is also
-saying that we are happy with the changes to both GitHub and OSF.
+In addition to checking the GitHub files in the pull requests, the files
+added to OSF will also be checked. Once the PRs are accepted, that is
+also saying that we are happy with the changes to GitHub, the website,
+and OSF.

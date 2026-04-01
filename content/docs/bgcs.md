@@ -1,6 +1,6 @@
 ---
 title: Biosynthetic gene clusters
-weight: 9
+weight: 100
 toc: true
 ---
 

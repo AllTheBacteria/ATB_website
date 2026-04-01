@@ -1,6 +1,6 @@
 ---
 title: Metadata and QC
-weight: 2
+weight: 20
 toc: true
 ---
 

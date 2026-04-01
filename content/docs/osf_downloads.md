@@ -1,6 +1,6 @@
 ---
 title: Batch downloading from OSF
-weight: 15
+weight: 160
 toc: true
 ---
 
