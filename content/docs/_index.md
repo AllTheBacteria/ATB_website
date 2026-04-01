@@ -4,20 +4,6 @@ layout: docs
 toc: true
 ---
 
-All WGS isolate bacterial INSDC data to August 2024 uniformly assembled,
-QC-ed, annotated, searchable.
-
-Follow up to Grace Blackwell's 661k dataset (which covered everything to
-Nov 2018).
-
-Preprint: <https://doi.org/10.1101/2024.03.08.584059>
-
-Please use the github repository to raise any issues:
-<https://github.com/AllTheBacteria/AllTheBacteria/issues>
-
-
-## Pages
-
 - [Overview](/docs/overview/)
 - [Metadata and QC](/docs/sample_metadata/)
 - [SQLite metadata](/docs/metadata_sqlite/)
