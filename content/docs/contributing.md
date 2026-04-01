@@ -21,7 +21,7 @@ Where do all the files live?
   should look for methods as opposed to the actual data. The exception
   is large files (eg containers or databases), which go on OSF.
 - Documentation for the end-user (ie how can I get and use the data?) is
-  here on readthedocs.
+  on this website under [/docs/](/docs/).
 
 ### Before starting
 
@@ -163,7 +163,7 @@ repository](https://github.com/AllTheBacteria/AllTheBacteria) that:
 
 1.  refers to the GitHub issue related to the analysis (the issue you
     originally made),
-2.  adds documentation to readthedocs, and
+2.  adds documentation to this website under `content/docs/`, and
 3.  includes reproducibility files.
 
 Notes on the documentation:
@@ -171,25 +171,18 @@ Notes on the documentation:
 - this should be instructions for any user who will want to download
   your analysis files and use them.
 - The documentation is in the `docs/` folder.
-- If you are adding a new page, then this means adding a new `.rst` file
-  and adding its name (without the `.rst`) to the `toctree` section of
-  the index file `index.rst`. For example, if the new file is `foo.rst`,
-  then also add `foo` to the index file.
-- The title that is in the `foo.rst` file - defined by the first line of
-  the file followed by a line of `====` of the same length - is what
-  will appear in the contents panel on the left of the readthedocs
-  pages. Please name this sensibly.
-- The order of files in the `index.rst` file is the same as the order
-  that is shown in readthedocs. If you add a new file, please put it in
-  an order that seems sensible.
+- If you are adding a new page, add a new Markdown file in
+  `content/docs/`, with Hugo front matter including `title`, `weight`,
+  and `toc`. For example, a new page might be `content/docs/foo.md`.
+- The page `title` is what will appear in the docs navigation. Please
+  name this sensibly.
+- The `weight` in the front matter controls the order shown in the docs
+  navigation. If you add a new file, give it a weight that keeps the
+  section order sensible.
 - You can build a local copy of the documentation by running
-  `sphinx-build -b html -d _build/doctrees . OUT/html`. This assumes
-  that sphinx is installed (on Ubuntu the package is `python3-sphinx`),
-  and also the python package `sphinx_rtd_theme` (which is pip
-  installable)
-- when the pull request is merged, readthedocs at
-  <https://allthebacteria.readthedocs.io/en/latest/> will be
-  automatically rebuilt with the changes.
+  `hugo`, or preview it locally with `hugo server`.
+- when the pull request is merged, this website will need to be
+  rebuilt/deployed with the changes.
 
 Notes on reproducibility files:
 

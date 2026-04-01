@@ -7,7 +7,7 @@ toc: true
 ## Summary
 
 All [sylph](https://github.com/bluenote-1577/sylph)-identified genomes
-from [AllTheBacteria](https://allthebacteria.readthedocs.io/en/latest/)
+from [AllTheBacteria](/docs/)
 `0.2` and `incremental release 2024-08` were typed using various tools
 
 *Bacillus cereus* group spp.
