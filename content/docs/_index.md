@@ -15,6 +15,7 @@ toc: true
 - [Defense systems](/docs/defense/)
 - [Biosynthetic gene clusters](/docs/bgcs/)
 - [Hypothetical protein structures](/docs/hypothetical_protein_structures/)
+- [WhatsGNU protein allele frequencies](/docs/whatsgnu_panallelome/)
 - [Species specific typing](/docs/typing/)
 - [Archaea](/docs/archaea/)
 - [Sequence alignment with LexicMap](/docs/lexicmap/)
