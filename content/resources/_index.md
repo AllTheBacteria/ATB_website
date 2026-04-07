@@ -15,7 +15,7 @@ layout: hextra-home
   {{< hextra/feature-card
     title="Documentation"
     icon="document-search"
-    link="https://allthebacteria.readthedocs.io/en/latest/"
+    link="/docs/"
     subtitle="Full documentation on all aspects of the data"
     class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-lg:min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
@@ -38,7 +38,7 @@ layout: hextra-home
   {{< hextra/feature-card
     title="Files on the cloud"
     icon="cloud-download"
-    link="https://allthebacteria.readthedocs.io/en/latest/assemblies.html#downloading-assemblies-from-aws"
+    link="/docs/assemblies/#downloading-assemblies-from-aws"
     subtitle="Cloud access to assemblies and search indices, enabled by AWS Open Data programme"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(78, 59, 221, 0.15),hsla(0,0%,100%,0));"
   >}}
@@ -46,7 +46,7 @@ layout: hextra-home
     title="How to contribute data"
     icon="sparkles"
     subtitle="We welcome you to join the ATB contributors!"
-    link="https://allthebacteria.readthedocs.io/en/latest/contributing.html"
+    link="/docs/contributing/"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(59, 191, 221, 0.15),hsla(0,0%,100%,0));"
   >}}
 
