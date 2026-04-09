@@ -35,7 +35,7 @@ Post-assembly analysis status
 | [Biosynthetic gene clusters](/docs/bgcs/)      | ✓    | ✓       | ✗       |
 | [Defense systems](/docs/defense/)              | ✓    | ✓       | ✗       |
 
-\[1\]: The indexes are for r0.2 plus 2024-08 (and 20205-05)  combined, not two separate
+\[1\]: The indexes are for r0.2 plus 2024-08 (and 2025-05)  combined, not two separate
 indexes.
 
 ### Archaea
