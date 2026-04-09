@@ -6,7 +6,7 @@ toc: true
 
 ## Current status
 
-Date updated: 2026-02-26.
+Date updated: 2026-04-09.
 
 ### Bacteria
 
@@ -28,14 +28,14 @@ Post-assembly analysis status
 | assembly-stats                            | ✓    | ✓       | ✓       |
 | checkm2                                   | ✓    | ✓       | ✓       |
 | [Lexicmap index](/docs/lexicmap/) <sup>1</sup> | ✓    | ✓       | ✗       |
-| sketchlib index <sup>1</sup>              | ✓    | ✓       | ✗       |
+| [sketchlib index ](/docs/sketchlib/) <sup>1</sup>              | ✓    | ✓       | ✓       |
 | [Annotation](/docs/annotation/)                | ✓    | ✓       | ✗       |
 | [Antimicrobial resistance](/docs/amr/)         | ✓    | ✓       | ✗       |
 | [Species-specific typing](/docs/typing/)       | ✓    | ✓       | ✗       |
 | [Biosynthetic gene clusters](/docs/bgcs/)      | ✓    | ✓       | ✗       |
 | [Defense systems](/docs/defense/)              | ✓    | ✓       | ✗       |
 
-\[1\]: The indexes are for r0.2 plus 2024-08 combined, not two separate
+\[1\]: The indexes are for r0.2 plus 2024-08 (and 20205-05)  combined, not two separate
 indexes.
 
 ### Archaea

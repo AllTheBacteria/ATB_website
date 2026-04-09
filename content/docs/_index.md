@@ -19,6 +19,7 @@ toc: true
 - [Species specific typing](/docs/typing/)
 - [Archaea](/docs/archaea/)
 - [Sequence alignment with LexicMap](/docs/lexicmap/)
+- [Sequence distances with sketchlib](/docs/sketchlib/)
 - [Contributing to AllTheBacteria](/docs/contributing/)
 - [Batch downloading from OSF](/docs/osf_downloads/)
 - [FAQ](/docs/faq/)
