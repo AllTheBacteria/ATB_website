@@ -22,4 +22,5 @@ matching OSF destination.
 | [Biosynthetic gene clusters](/docs/bgcs/) | [GECCO component](https://osf.io/cufb2/) |
 | [Hypothetical protein structures](/docs/hypothetical_protein_structures/) | [Structure databases component](https://osf.io/x693m/) |
 | [Species specific typing](/docs/typing/) | [Acinetobacter baumannii serotyping](https://osf.io/vjma7/), [Bacillus cereus group](https://osf.io/8ua49/), [Clostridium perfringens toxinotyping](https://osf.io/djhga/), [Listeria monocytogenes LisSero typing](https://osf.io/9cbqg/), [Shigella serotyping and species ID](https://osf.io/6a8mv/), [Vibrio parahaemolyticus serotyping](https://osf.io/xc26j/) |
+| [sketchlib](/docs/sketchlib/) | [sketchlib component](https://osf.io/rceq5) |
 | [Archaea](/docs/archaea/) | [Archaea component](https://osf.io/nehtp/) |
