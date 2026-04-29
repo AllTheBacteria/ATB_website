@@ -27,8 +27,11 @@ column, whether the run completed successfully (`PASS`), failed
 (`FAIL`), or is yet to be run (`NOT DONE`) in the `status` column. There
 is an additional column for any comments, such as indicating if the
 output of `amrfinder` was empty if no AMR determinants were identified (`no AMRFinderPlus hits detected`).
+
 We also include a copy of the `amrfinder` database we used in each
 `database` sub-folder.
+
+`amrfinderplus.parquet` is a Parquet database file for use with the ATB command line interface. It includes two additional columns, `genus` and `species` which can be used for filtering.
 
 ## Updates to AMR calls
 The dataset will be updated at least yearly with newer version of AMRFinderPlus and its database; therefore, the results are organized into folders based on the version of `amrfinder` that was used, and sub-folders within these based on the `amrfinder database` version used. 
