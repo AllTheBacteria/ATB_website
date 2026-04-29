@@ -17,7 +17,7 @@ The results are organized into folders based on the version of `amrfinder` that 
 used, and sub-folders within these based on the `amrfinder database`
 version used. 
 
-The current version of the AMRFinderPlus results were run using a Nextflow pipeline [found here](https://github.com/jhawkey/atb-amrfp-nf/tree/main) using **AMRFinderPlus version v.2.5 with database 2025-12.03.1**.
+The current version of the AMRFinderPlus results were run using a Nextflow pipeline [found here](https://github.com/jhawkey/atb-amrfp-nf/tree/main) using **AMRFinderPlus version v4.2.5 with database 2025-12.03.1**.
 
 Genomes were matched to the organism available in AMRFinderPlus where possible; a table linking each ATB species to its corresponding AMRFinderPlus species [can be found here](https://github.com/jhawkey/atb-amrfp-nf/blob/main/unique_ATB_spp.txt).
 
