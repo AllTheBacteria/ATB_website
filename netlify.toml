@@ -9,3 +9,8 @@ HUGO_VERSION = "0.145.0"
 from = "/npmjs/*"
 to = "/npmjs/"
 status = 200
+
+[[redirects]]
+from = "/browse/*"
+to = "https://atb-explorer-web.onrender.com/browse/:splat"
+status = 200
