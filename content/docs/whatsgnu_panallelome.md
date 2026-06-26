@@ -58,6 +58,16 @@ conda activate whatsgnu-atb
 Use the included downloader to fetch data from OSF. No OSF account or
 token is required - the project is public.
 
+You can also use `atb osf` to discover the hosted WhatsGNU files:
+
+```bash
+atb osf ls WhatsGNU
+atb osf download --dry-run "WhatsGNU.*WGNU_ATB_DB"
+```
+
+Use the WhatsGNU commands below for the database layout and query
+workflow.
+
 **Download the database (required for querying):**
 
 ```bash

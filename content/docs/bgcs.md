@@ -19,6 +19,13 @@ for the v0.2 release and the incremental release (08-2024), as well as a
 pair of files which contains both the v0.2 and the incremental release
 (08-2024).
 
+Use `atb osf` to browse and download the GECCO files:
+
+```bash
+atb osf ls GECCO
+atb osf download --verify "GECCO.*clusters"
+```
+
 Also available is a status file indicating which genomes (`samples`
 column) have been processed. As of now, that includes all genomes
 present in release v0.2 and in the incremental release (08-2024), and

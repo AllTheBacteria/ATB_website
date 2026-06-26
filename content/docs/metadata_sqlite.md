@@ -12,6 +12,21 @@ incremental release 2024-08.
 This is very detailed; if you just want simple flat files, then please
 see the [Metadata and QC](/docs/sample_metadata/) page.
 
+For routine filtering and sample lookups, use the
+[ATB command line tool](/docs/cli/) instead of downloading and
+decompressing the full SQLite database:
+
+```bash
+atb fetch
+atb query --has-assembly --limit 20
+atb query --has-assembly --min-n50 1000000 \
+  --columns sample_accession,dataset,total_length,N50
+atb info SAMN02391170
+```
+
+The SQLite database is still useful for power users who need direct SQL,
+custom joins, or a complete local copy of the database schema.
+
 The 202505 SQLite database is in the file
 `atb.metadata.202505.sqlite.xz`, available from OSF at:
 <https://osf.io/h7wzy/files/my56u>.
@@ -238,7 +253,7 @@ The columns of the table are:
   assembly.
 - `asm_pipe_filter`: a list of filters that this sample fails, or `PASS`
   if it passed all filters (similar to how the VCF filter column works).
-  This is onlt for the assembly pipeline. See also the columns
+  This is only for the assembly pipeline. See also the columns
   `sylph_filter` and `hq_filter`. This column uses the latest filters,
   not those used initially to find samples to process. This means a
   sample could be in the 661k, release 0.2 or incremental releases but
@@ -393,13 +408,24 @@ which case all fields except for `sample_accession` and
 
 ## Example SQLite queries
 
+The CLI equivalents are shown first where they exist. The SQL is kept
+for power users who want to query the SQLite database directly.
+
 Get all samples that have an assembly on OSF/AWS, ie this is release 0.2
 (which includes 661k) and incremental releases 2024-08, 2025-05:
+
+    atb query --has-assembly
 
     SELECT * FROM assembly WHERE asm_fasta_on_osf=1;
 
 Get the sample and ENA assembly accessions of all samples in incremental
 release 2024-08 that have an ENA accession:
+
+The CLI can list the relevant columns; filter out `NA` accessions
+downstream if needed:
+
+    atb query --dataset Incr_release.202408 --has-assembly \
+      --columns sample_accession,assembly_accession
 
     SELECT sample_accession,assembly_accession
     FROM assembly
@@ -407,11 +433,20 @@ release 2024-08 that have an ENA accession:
 
 Get all samples with an assembly on OSF/AWS with N50 at least 1000000:
 
+    atb query --has-assembly --min-n50 1000000 \
+      --columns sample_accession,dataset,total_length,N50
+
     SELECT assembly.sample_accession, assembly.dataset, assembly_stats.total_length, assembly_stats.N50
     FROM assembly JOIN assembly_stats ON assembly.sample_accession = assembly_stats.sample_accession
     WHERE assembly_stats.N50 > 1000000 AND assembly.asm_fasta_on_osf=1;
 
 Get the assembly info and ENA 20240801 metadata for sample SAMN02391170:
+
+For current sample details, use:
+
+    atb info SAMN02391170
+
+For the exact 2024-08 ENA snapshot join, use SQL:
 
     SELECT * FROM assembly
     JOIN ena_20240801 ON assembly.sample_accession = ena_20240801.sample_accession

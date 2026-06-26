@@ -14,6 +14,16 @@ consistent set of species calls for everything up to and including
 older (r0.2 and 2024-08) files were not changed and contain the old
 method species calls.
 
+The command line tool queries the 2025-05 aggregated species calls:
+
+```bash
+atb query --species "Escherichia coli" --hq-only --limit 10
+atb query --species-like "Enterococcus%faecium" --hq-only --limit 10
+```
+
+Use `--species-like` when GTDB naming differs from common NCBI names or
+when you want to search across naming variants.
+
 ## ENA species
 
 This is simply the value of the `scientific_name` in the ENA metadata,
@@ -45,7 +55,7 @@ To pass, the Sylph call must have:
 2.  `c * g * (r / (r - k + 1)) >= 0.5 * base_count`, which roughly means
     that at least half of the reads match this genome. Although this may
     sound like a low threshold, sequencing errors have a significant
-    detrimental affect on the calculation.
+    detrimental effect on the calculation.
 
 Further, for a sample (not just a run) to pass, there can be only one
 species call that passes. A sample with more than one run could have two

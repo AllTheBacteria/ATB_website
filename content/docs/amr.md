@@ -19,6 +19,28 @@ version used.
 
 The current version of the AMRFinderPlus results were run using a Nextflow pipeline [found here](https://github.com/jhawkey/atb-amrfp-nf/tree/main) using **AMRFinderPlus version v4.2.5 with database 2025-12.03.1**.
 
+For routine queries, use `atb amr`. This reads the `amrfinderplus.parquet`
+table from the 2025-05 aggregated metadata:
+
+```bash
+atb fetch
+
+# AMR hits for high-quality E. coli genomes
+atb amr --species "Escherichia coli" --hq-only --limit 100
+
+# Filter by drug class or gene
+atb amr --species "Escherichia coli" --class "BETA-LACTAM"
+atb amr --gene "blaCTX-M-15" --limit 100
+
+# Include optional ENA metadata columns
+atb fetch --tables ena_20250506.parquet
+atb amr --species "Escherichia coli" --class "BETA-LACTAM" --with-ena
+
+# Download assemblies matching an AMR query
+atb amr --species "Klebsiella pneumoniae" --gene "blaCTX-M-15" \
+  --download --dry-run
+```
+
 Genomes were matched to the organism available in AMRFinderPlus where possible; a table linking each ATB species to its corresponding AMRFinderPlus species [can be found here](https://github.com/jhawkey/atb-amrfp-nf/blob/main/unique_ATB_spp.txt).
 
 Each table of results has a matched status file. The status file

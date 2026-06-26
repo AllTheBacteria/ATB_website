@@ -5,6 +5,7 @@ toc: true
 ---
 
 - [Overview](/docs/overview/)
+- [Command line tool](/docs/cli/)
 - [Metadata and QC](/docs/sample_metadata/)
 - [OSF links](/docs/osf_links/)
 - [SQLite metadata](/docs/metadata_sqlite/)
@@ -21,7 +22,7 @@ toc: true
 - [Sequence alignment with LexicMap](/docs/lexicmap/)
 - [Sequence distances with sketchlib](/docs/sketchlib/)
 - [Contributing to AllTheBacteria](/docs/contributing/)
-- [Batch downloading from OSF](/docs/osf_downloads/)
+- [Browsing and downloading from OSF](/docs/osf_downloads/)
 - [FAQ](/docs/faq/)
 - [Release history](/docs/release_history/)
 - [Migration from EBI FTP to OSF](/docs/ebi2osf/)

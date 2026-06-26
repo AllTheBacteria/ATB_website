@@ -9,6 +9,21 @@ available from https://github.com/bacpop/sketchlib.rust.
 
 Sketchlib indexes are available from OSF here: https://osf.io/rceq5/overview.
 
+For routine closest-genome searches, use the ATB command line tool. It
+installs sketchlib `v0.2.4` when you run `atb sketch install`.
+
+```bash
+atb sketch install
+atb sketch fetch
+atb sketch query my_genome.fasta --knn 50
+```
+
+The CLI can also download the matching assemblies:
+
+```bash
+atb sketch query my_genome.fasta --knn 50 --download ./closest_genomes
+```
+
 The latest index, which is all assemblies up to and including
 incremental release 202505 (ie it is release 0.2 plus incremental releases
 202408 and 202505), is in the files
@@ -17,6 +32,11 @@ incremental release 202505 (ie it is release 0.2 plus incremental releases
 Older index files are also available.
 
 The distributed indexes have sketch size `1024` with `k=17`.
+
+## Manual sketchlib use
+
+The following commands are for power users who want to call sketchlib
+directly, for example to calculate distances within a subset.
 
 To calculate distances of a subset of the data, use a command such as:
 ```
@@ -35,4 +55,3 @@ Then query it
 ```
 sketchlib dist -v -k 17 atb_sketchlib.aggregated.202505 query
 ```
-

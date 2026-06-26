@@ -10,6 +10,29 @@ All [sylph](https://github.com/bluenote-1577/sylph)-identified genomes
 from [AllTheBacteria](/docs/)
 `0.2` and `incremental release 2024-08` were typed using various tools
 
+For standard MLST queries across the aggregated ATB metadata up to and
+including 2025-05, use `atb mlst`:
+
+```bash
+atb fetch
+
+# Get MLST calls for high-quality E. coli genomes
+atb mlst --species "Escherichia coli" --hq-only --limit 20
+
+# Find a sequence type
+atb mlst --species "Escherichia coli" --st 131 --hq-only
+
+# Query by scheme
+atb mlst --scheme salmonella --limit 50
+
+# Download matching assemblies
+atb mlst --species "Escherichia coli" --st 131 --download -d ./st131
+```
+
+The sections below describe species-specific typing analyses that go
+beyond the standard MLST table, such as capsule, toxin, serotype, and
+lineage tools.
+
 *Bacillus cereus* group spp.
 
 - [BTyper3](https://github.com/lmc297/BTyper3) v3.4.0 (Standardized

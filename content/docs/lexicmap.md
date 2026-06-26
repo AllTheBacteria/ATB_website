@@ -127,6 +127,16 @@ Tools:
 - [LexicMap](https://bioinf.shenwei.me/LexicMap/installation/)
 - <https://github.com/shenwei356/rush>, for running jobs in parallel
 
+The recommended way to download and extract ATB assembly batches for a
+local LexicMap build is:
+
+    atb osf download --project AllTheBacteria/Assembly --all \
+        --extract --compress gz --delete-archive -o atb
+
+This replaces the manual file-list, URL extraction, `wget`, and `tar`
+steps for most users. The original manual workflow is kept below for
+power users who want exact control over each step.
+
 Steps:
 
 1.  Downloading the list file of all [assemblies](https://osf.io/zxfmy/)
@@ -135,7 +145,7 @@ Steps:
         mkdir -p atb;
         cd atb;
 
-        # Attention, the URL might changes,
+        # Attention, the URL might change,
         # please check in the browser: https://osf.io/zxfmy/files/osfstorage
         # This url is for v0.2 + incr_202408 + incr_202505.
         wget https://osf.io/download/3xs6h/ -O file_list.all.latest.tsv.gz
@@ -205,7 +215,7 @@ Steps:
 
         lexicmap index -S -X files.txt -O atb.lmi -b 25000 --log atb.lmi.log
 
-        # It's for the v0.2 + 2024008
+        # It's for the v0.2 + 202408
         #
         # dirsize atb.lmi
         atb.lmi: 5.24 TiB (5,758,875,365,595)
