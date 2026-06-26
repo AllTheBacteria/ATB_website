@@ -20,6 +20,9 @@ enableInlineShortcodes: true
 
 menu:
   main:
+    - name: Browse data
+      url: /browse # url instead of pageRef because no Hugo page exists
+      weight: -1
     - name: Resources
       pageRef: /resources
       weight: 1
