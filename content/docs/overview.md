@@ -44,22 +44,27 @@ The only release is 2024-07, and has 815 assemblies.
 
 ## Where are the docs/data/methods?
 
-There are three places to go, depending on what you want:
+There are five places to go, depending on what you want:
 
-1.  Documentation: how to download and use the data/analysis files is
-    described in this documentation you are currently reading
-2.  Files: the data are all hosted on OSF: <https://osf.io/xv7q9/>,
-    which includes assembly and analysis files. For bulk downloads,
-    please read [Bulk Downloads](/docs/osf_downloads/).
-3.  [Assemblies](/docs/assemblies/) are available from OSF, AWS, and the ENA.
-4.  Methods/code: in-depth methods details and files for reproducibility
+1.  Command line access: for routine querying, assembly downloads, AMR
+    and MLST searches, sketchlib queries, and OSF browsing, use the
+    [ATB command line tool](/docs/cli/).
+2.  Documentation: how to understand the data and analysis files is
+    described in this documentation you are currently reading.
+3.  Files: the data are all hosted on OSF: <https://osf.io/xv7q9/>,
+    which includes assembly and analysis files. For direct bulk
+    downloads, please read [Browsing and downloading from OSF](/docs/osf_downloads/).
+4.  [Assemblies](/docs/assemblies/) are available from OSF, AWS, and the ENA.
+5.  Methods/code: in-depth methods details and files for reproducibility
     are stored in this github repository:
     <https://github.com/AllTheBacteria/AllTheBacteria>. If you are just
     using the data, you shouldn't need to look there.
 
 If you only want to use the data without caring about the methods then
-we suggest you read this documentation, which has the relevant links to
-OSF, as opposed to going directly to OSF.
+we suggest you start with the [command line tool](/docs/cli/) and then
+use this documentation for dataset details. The manual OSF/AWS/SQLite
+sections are kept for users who need direct file access or low-level
+database queries.
 
 ## A brief history of AllTheBacteria
 

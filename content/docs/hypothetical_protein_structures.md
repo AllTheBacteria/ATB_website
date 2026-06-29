@@ -71,6 +71,16 @@ specific container tag `rocm6_cpuTF` available at
 
 ## Files
 
+Use `atb osf` to browse and download the structure files and metadata:
+
+```bash
+atb osf ls "Protein Structures"
+atb osf download --dry-run "Protein Structures.*ATB_AFDB_map"
+```
+
+The commands below describe how the split files are assembled after
+download.
+
 ### Foldseek Database
 
 We provide a Foldseek database (created using `foldseek createdb`) via

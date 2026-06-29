@@ -16,6 +16,13 @@ are here: <https://osf.io/nehtp/>. The only exception is that, because
 there are relatively few samples, each release of assemblies consists of
 a single tarball of FASTA files (as opposed to 100s of tarballs).
 
+The `atb osf` commands can be used to browse and download the OSF files:
+
+```bash
+atb osf ls Archaea
+atb osf download --project AllTheBacteria/Archaea --all -o ./archaea
+```
+
 For a description of the files and metadata etc, please read the
-[Assemblies](/docs/assemblies/) and [batch downloading](/docs/osf_downloads/)
+[Assemblies](/docs/assemblies/) and [OSF downloads](/docs/osf_downloads/)
 pages.

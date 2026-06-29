@@ -28,6 +28,17 @@ to meet the 5 GB file limit. By doing so, all annotation data could be
 reduced to a total of ~1.3 TB and ~0.3 TB for `r0.2` and
 `incr_release.202408`, respectively.
 
+Use `atb osf` to find and download Bakta files from the command line:
+
+```bash
+atb osf ls --grep "bakta.*status"
+atb osf ls --grep "bakta.*batch"
+atb osf download --dry-run "Bakta.*status"
+```
+
+For very large downloads, use `--verify` to check MD5 sums after
+download.
+
 For each release, there is a status file in a `File_Lists` folder, e.g.
 `atb.bakta.r0.2.status.tsv.gz` providing
 the following information:

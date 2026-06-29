@@ -23,13 +23,17 @@ tools) pipeline. They include:
 
 ## Metadata availability
 
-The metadata are available in two forms:
+The metadata are available in three forms:
 
-1.  Flat files. These are described below. This is how all of the data
+1.  Through the [ATB command line tool](/docs/cli/). This is the
+    recommended route for routine filtering, sample lookups, and
+    assembly downloads. It uses Parquet tables and a local query index
+    built by `atb fetch`.
+2.  Flat files. These are described below. This is how all of the data
     was released when we first uploaded everything to OSF in 2024.
-2.  In an [SQLite database](/docs/metadata_sqlite/), available for releases
+3.  In an [SQLite database](/docs/metadata_sqlite/), available for releases
     2024-08 and 2025-05. It gathers together all of the ENA metadata,
-    assembly metadata, plus slpyh, checkm2 and assembly stats output.
+    assembly metadata, plus sylph, checkm2 and assembly stats output.
     The 2024-08 database contains more stringent checks on the metadata,
     and so more samples are flagged as possibly unreliable than in the
     flat files. From 2025-05 onwards, the database has the same
@@ -38,6 +42,15 @@ The metadata are available in two forms:
 This page describes the flat files. It is simpler than the database. The
 details of the metadata and the SQLite database are complicated, and are
 described in a separate page: [SQLite metadata](/docs/metadata_sqlite/)
+
+For common questions, the CLI usually avoids downloading or decompressing
+the full SQLite database:
+
+```bash
+atb fetch
+atb query --species "Salmonella enterica" --hq-only --limit 20
+atb info SAMD00000355
+```
 
 ## Metadata files
 

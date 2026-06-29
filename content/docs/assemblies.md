@@ -6,15 +6,47 @@ toc: true
 
 ## Summary
 
-Assemblies can be downloaded from OSF, AWS, or the ENA.
+Assemblies can be downloaded with the [ATB command line tool](/docs/cli/),
+or directly from OSF, AWS, or the ENA.
 
+- For routine use, use `atb query` and `atb download`.
 - Batched assemblies are on OSF. If you want all assemblies or large
-  numbers then get them from OSF.
+  numbers outside the CLI, get them from OSF.
 - Individual FASTA files for each sample are on AWS. If you want
-  assemblies for specific samples then AWS will be easiest.
+  assemblies for specific samples outside the CLI, AWS will be easiest.
 - Individual FASTA files are also available from the ENA. However,
   around 10,000 assemblies are not available from the ENA, since the
   submission system rejected them due to various errors.
+
+## Recommended: command line downloads
+
+The CLI uses the aggregated data up to and including incremental release
+2025-05. Query the metadata first, then download the matching assemblies:
+
+```bash
+atb fetch
+atb query --species "Klebsiella pneumoniae" --hq-only \
+  --columns sample_accession,sylph_species,N50,aws_url \
+  --limit 10 -o klebsiella.tsv
+atb download --from klebsiella.tsv --output-dir ./klebsiella_genomes
+```
+
+You can also download one assembly directly:
+
+```bash
+atb download --url https://allthebacteria-assemblies.s3.eu-west-2.amazonaws.com/SAMD00000355.fa.gz \
+  --output-dir ./genomes
+```
+
+For bulk OSF assembly batches, including extraction and recompression:
+
+```bash
+atb osf download --project AllTheBacteria/Assembly --all \
+  --extract --compress gz --delete-archive -o ./assemblies
+```
+
+The sections below are manual download methods for power users who need
+direct URLs, exact archive names, ENA accessions, or custom pipelines.
 
 ## Downloading assemblies from AWS
 
@@ -138,6 +170,13 @@ Older files (pre-202505) have these two columns:
 If you want to download the archives in bulk, then use the `tar_xz_url`
 column to get the urls, and `tar_xz` for what you should name the
 downloaded file. OSF does not have the filename in the download URL.
+
+The CLI can do this directly, with optional extraction:
+
+```bash
+atb osf download --project AllTheBacteria/Assembly --all \
+  --extract --compress gz --delete-archive -o ./assemblies
+```
 
 Here's an example of how to get the wget commands to run:
 

@@ -22,6 +22,10 @@ Designed to support the global microbiology community, it provides standardized,
 
 We provide multiple types of search tools (e.g. [sketchlib](https://github.com/bacpop/sketchlib.rust) and [sourmash](https://sourmash.readthedocs.io/en/latest/) for finding similar genomes to a query, and [Lexicmap](https://bioinf.shenwei.me/LexicMap/) for BLAST-style alignment to the full dataset).
 
+For command line querying, assembly downloads, AMR/MLST searches, OSF
+file browsing, and sketchlib nearest-neighbour searches, start with the
+[ATB command line tool](/docs/cli/).
+
 Please feel free to use the data, and to join us if you see analyses on your favourite species that would be valuable to all.
 
 {{< figure
@@ -30,5 +34,4 @@ Please feel free to use the data, and to join us if you see analyses on your fav
   height=300
   class="ma0 w-75"
 >}}
-
 

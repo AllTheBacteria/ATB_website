@@ -10,6 +10,13 @@ species with \>400 samples from release 0.2 plus incremental release
 component](https://osf.io/hpgac/overview). This includes 27 species and
 1,166,956 samples.
 
+Use `atb osf` to find and download the result files:
+
+```bash
+atb osf ls DefenseFinder
+atb osf download --verify "DefenseFinder.*results"
+```
+
 Note that this analysis is all with DefenseFinder
 [v1.3.0](https://github.com/mdmparis/defense-finder/releases/tag/v1.3.0)
 using the profiles from defense-finder-models v1.3.0 and CasFinder

@@ -1,28 +1,52 @@
 ---
-title: Batch downloading from OSF
+title: Browsing and downloading from OSF
 weight: 160
 toc: true
 ---
 
 The data are all hosted on OSF: <https://osf.io/xv7q9/>
 
-If you only want a few files, then browsing the website an manually
-downloading works fine. This page describes how to download files in
-bulk. It is not immediately obvious how to do so, because you need to
-get the URLs of the files you want to download.
+If you only want a few files, then browsing the website and manually
+downloading works fine. For command line access, the recommended route
+is `atb osf`, which uses the project file index and can verify MD5 sums.
+
+```bash
+atb osf ls
+atb osf ls AMR
+atb osf ls --grep "bakta.*batch"
+atb osf download --dry-run "AMRFinderPlus.*latest"
+atb osf download --verify "DefenseFinder.*results"
+```
+
+Download every file in one project/component:
+
+```bash
+atb osf download --project AllTheBacteria/MLST --all -o ./mlst_data
+```
+
+Download and extract assembly tarballs:
+
+```bash
+atb osf download --project AllTheBacteria/Assembly --all \
+  --extract --compress gz --delete-archive -o ./assemblies
+```
+
+The rest of this page documents the underlying file index and manual
+methods for power users who want to script their own downloads.
 
 ## All latest files
 
 We provide a tab-delimited file of all the files that are on OSF for the
 whole AllTheBacteria project: [all_atb_files.tsv](https://osf.io/r6gcp).
 This is subject to change, and is updated when files change on OSF.
+The `atb osf` commands use this file index internally.
 
 The columns are:
 
 - `project`: the name of the project/component, plus its parents, with
   the names separated by `/`. For example the Metadata component sits
   directly under the main AllTheBacteria project, and is called
-  `AlTheBacteria/Metadata`.
+  `AllTheBacteria/Metadata`.
 - `project_id`: the project identifier. This is useful if you want to
   make your own file list (see below)
 - `filename`: the name of the file
@@ -47,8 +71,8 @@ and then check the MD5 sum is correct.
 
 ## Making file lists
 
-Ignore this section if you just want to use the file list provided by
-us. Otherwise, keep reading.
+Ignore this section if you just want to use `atb osf` or the file list
+provided by us. Otherwise, keep reading.
 
 A file list can be made with this script:
 <https://github.com/martinghunt/bioinf-scripts/blob/master/python/osf_get_files_for_project.py>
