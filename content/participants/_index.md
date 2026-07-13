@@ -17,7 +17,7 @@ The AllTheBacteria project is the joint work of many people across the globe:
 - Michael Hall (University of Melbourne)
 - Jane Hawkey (Monash University)
 - Lesley Hoyles (Nottingham Trent University)
-- Martin Hunt (University of Oxford, EMBL-EBI)
+- Martin Hunt (Wellcome Sanger Institute)
 - Zamin Iqbal (University of Bath)
 - John Lees (EMBL-EBI)
 - Robert A Petit III (Wyoming Public Health Laboratory)
