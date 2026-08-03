@@ -6,7 +6,7 @@ toc: true
 
 ## Phylogeny
 
-The tree of 2,399,238 samples from the 2024-08 release can be downloaded from [OSF](link), or browsed interactively on [taxonium](https://www.taxonium.org/atb).
+The tree of 2,399,238 samples from the 2024-08 release can be downloaded from [OSF](https://osf.io/b79m4/files/upe3k), or browsed interactively on [taxonium](https://www.taxonium.org/atb).
 
 Note this includes all samples, not just high-quality samples.
 
@@ -30,8 +30,8 @@ An example of some R code to subset the tree to an order (e.g. `Mycobacteriales`
 
 ```r
 library(ape)
-atb_tree <- read.tree("ATB_tree_batch2_cleaned.nwk")
-ATB_tax <- read.csv("ATB_tree_taxonomic_assignments_GTDB.csv")
+atb_tree <- read.tree("ATB_tree_202408/ATB_tree_202408.nwk")
+ATB_tax <- read.csv("ATB_tree_202408/ATB_tree_202408_taxonomic_assignments_GTDB.csv")
 
 # subset
 myco <- ATB_tax[ATB_tax$Order == "Mycobacteriales", 1]
