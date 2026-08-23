@@ -5,6 +5,7 @@ toc: true
 ---
 
 - [Overview](/docs/overview/)
+- [Online data browser](/docs/data_browser/)
 - [Command line tool](/docs/cli/)
 - [Metadata and QC](/docs/sample_metadata/)
 - [OSF links](/docs/osf_links/)
