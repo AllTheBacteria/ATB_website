@@ -10,7 +10,7 @@ Anyone/everyone is welcome to use the data and publish with them. There
 is no expectation that the people who made the release/data should be
 co-authors on these publications, but we would appreciate citation of
 the preprint
-(<https://www.biorxiv.org/content/10.1101/2024.03.08.584059v1>).
+(<https://www.biorxiv.org/content/10.1101/2024.03.08.584059v8>).
 
 ## How can I get involved?
 

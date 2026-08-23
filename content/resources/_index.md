@@ -7,7 +7,7 @@ layout: hextra-home
   {{< hextra/feature-card
     title="Preprint"
     icon="academic-cap"
-    link="https://www.biorxiv.org/content/10.1101/2024.03.08.584059v3.full"
+    link="https://www.biorxiv.org/content/10.1101/2024.03.08.584059v8.full"
     subtitle="Preprint describing the current state of data and analysis"
     class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-md:min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
