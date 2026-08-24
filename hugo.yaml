@@ -26,9 +26,6 @@ menu:
     - name: Resources
       pageRef: /resources
       weight: 1
-    - name: Participants
-      pageRef: /participants
-      weight: 2
     - name: Publications
       pageRef: /publications
       weight: 3
