@@ -57,18 +57,22 @@ the following information:
 
 Example \`SAMN38372697\`:
 
-    sample          SAMN38372697
-    status          PASS
-    file_name       SAMN38372697.bakta.json
-    file_md5        008d86ad046e0d152b8cc22d7452be24
-    tar_xz          atb.bakta.incr_release.202408.batch.29.tar.xz
-    tar_xz_md5      7da90ac7650de2c2e0b821569ae2a602
-    tar_xz_size_MB  1201.0
+```text
+sample          SAMN38372697
+status          PASS
+file_name       SAMN38372697.bakta.json
+file_md5        008d86ad046e0d152b8cc22d7452be24
+tar_xz          atb.bakta.incr_release.202408.batch.29.tar.xz
+tar_xz_md5      7da90ac7650de2c2e0b821569ae2a602
+tar_xz_size_MB  1201.0
+```
 
 To restore all output files for a given sample from its JSON file, use
 the following command:
 
-    bakta_io --output <output-path> --prefix <file-prefix> sample.json
+```bash
+bakta_io --output <output-path> --prefix <file-prefix> sample.json
+```
 
 For any questions regarding the Bakta genome annotation, please contact
 [Oliver Schwengers](mailto:oliver.schwengers@cb.jlug.de).

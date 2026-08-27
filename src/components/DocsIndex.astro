@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import { docsPages } from '../data/docs-nav.js';
+
+// Table of contents for /docs/, generated from the same page list as the
+// sidebar, with labels taken from each page's frontmatter title.
+const entries = await getCollection('docs');
+const byId = new Map(entries.map((entry) => [entry.id, entry]));
+const pages = docsPages.map((slug) => {
+	const entry = byId.get(`docs/${slug}`);
+	if (!entry) throw new Error(`DocsIndex: no docs entry found for "${slug}"`);
+	return { href: `/docs/${slug}/`, title: entry.data.title };
+});
+---
+
+<ul>
+	{
+		pages.map((page) => (
+			<li>
+				<a href={page.href}>{page.title}</a>
+			</li>
+		))
+	}
+</ul>
