@@ -16,7 +16,7 @@ assemblies with LexicMap:
 - [Local search with pre-built index](#local-search-with-pre-built-index) - Download the index from AWS and search locally
 - [Building an index and searching locally](#building-an-index-and-searching-locally) - Download assemblies from OSF and build an index
 
-## Searching on AWS EC2 {#searching-on-aws-ec2}
+## Searching on AWS EC2
 
 1.  [Launch an EC2
     instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstances.html)
@@ -91,7 +91,7 @@ assemblies with LexicMap:
     sudo umount atb.lmi
     ```
 
-## Local search with pre-built index {#local-search-with-pre-built-index}
+## Local search with pre-built index
 
 Install `awscli` via conda.
 
@@ -133,7 +133,7 @@ atb.lmi: 5.24 TiB (5,758,875,365,595)
 [search](https://bioinf.shenwei.me/LexicMap/tutorials/search/) with
 LexicMap.
 
-## Building an index and searching locally {#building-an-index-and-searching-locally}
+## Building an index and searching locally
 
 **Make sure you have enough disk space, at least 8 TB, \>10 TB is
 preferred.**
