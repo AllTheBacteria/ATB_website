@@ -57,15 +57,19 @@ The columns are:
 Using this file, it is then relatively easy to batch download. For
 example, the ENA metadata file for release 0.2 has this information:
 
-    project     AllTheBacteria/Metadata
-    project_id  h7wzy
-    filename    0.2/ena_metadata.tsv.gz
-    url         https://osf.io/download/6661ba5c65e1de509c893bb6/
-    md5         47d03a4892ae6ec5f337c9854e67b7af
+```text
+project     AllTheBacteria/Metadata
+project_id  h7wzy
+filename    0.2/ena_metadata.tsv.gz
+url         https://osf.io/download/6661ba5c65e1de509c893bb6/
+md5         47d03a4892ae6ec5f337c9854e67b7af
+```
 
 You could use `wget` to download:
 
-    wget -O ena_metadata.tsv.gz https://osf.io/download/6661ba5c65e1de509c893bb6/
+```bash
+wget -O ena_metadata.tsv.gz https://osf.io/download/6661ba5c65e1de509c893bb6/
+```
 
 and then check the MD5 sum is correct.
 
@@ -92,7 +96,9 @@ JSON output, which returns all the metadata for each file, with
 The project identifier of AllTheBacteria is `xv7q9`. The file
 `all_atb_files.tsv` is made with:
 
-    osf_get_files_for_project.py xv7q9 > all_atb_files.tsv
+```bash
+osf_get_files_for_project.py xv7q9 > all_atb_files.tsv
+```
 
 ### Files for one project
 
@@ -103,7 +109,9 @@ in your browser. For example, the URL of the metadata component is
 <https://osf.io/h7wzy/> and you need to input `h7wzy` to the script. The
 usage is:
 
-    osf_get_files_for_project.py h7wzy > file_list.tsv
+```bash
+osf_get_files_for_project.py h7wzy > file_list.tsv
+```
 
 (replace `h7wzy` with the appropriate string depending on the component
 you want).

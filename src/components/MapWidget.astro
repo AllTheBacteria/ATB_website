@@ -1,0 +1,56 @@
+---
+// The atb-explorer map widget (samples by country) as a runtime-module
+// embed for the homepage. Renders entirely from build-baked JSON on the
+// explorer host — no API calls. Fails silently (empty errorText): the
+// homepage should stay clean if the widget can't load.
+import RuntimeEmbed from './RuntimeEmbed.astro';
+
+const APP_ORIGIN =
+	import.meta.env.PUBLIC_ATB_BROWSER_ORIGIN ?? 'https://atb-explorer-web.onrender.com';
+const APP_BASE = `${APP_ORIGIN}/browse/`;
+---
+
+{/* Warm the connection and the module fetch (body-level links are valid
+    and act like head ones; the homepage's head isn't reachable from a
+    component). Module imports are CORS-mode requests; preloads must match. */}
+<link rel="preconnect" href={APP_ORIGIN} crossorigin="anonymous" />
+<link rel="modulepreload" href={`${APP_BASE}embed/atb-widget.js`} crossorigin="anonymous" />
+
+<div class="atb-map-widget">
+	<RuntimeEmbed
+		js={`${APP_BASE}embed/atb-widget.js`}
+		css={`${APP_BASE}embed/atb-widget.css`}
+		assetBase={APP_BASE}
+		id="atb-map-widget"
+	/>
+	<p class="atb-map-caption">
+		Interactive map and summary statistics of the AllTheBacteria samples.
+		Select a country to preview its samples, or open the <a href="/browse/">data
+		browser</a> for the complete dataset.
+	</p>
+</div>
+
+<style>
+	.atb-map-widget {
+		/* The widget's design width (its standalone shell caps at 880px). */
+		max-width: 55rem;
+		margin-inline: auto;
+		margin-block: 1.5rem;
+	}
+	.atb-map-caption {
+		margin-top: 0.625rem;
+		text-align: center;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-3);
+	}
+	/* Stealth link: indistinguishable from the caption text until hovered. */
+	.atb-map-caption a {
+		color: inherit;
+		text-decoration: none;
+	}
+	.atb-map-caption a:hover {
+		color: var(--sl-color-gray-1);
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+</style>

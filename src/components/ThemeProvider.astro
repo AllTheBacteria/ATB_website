@@ -1,0 +1,11 @@
+---
+// Light-only for now: pin the theme before first paint and stub the
+// provider API that theme pickers would call. To re-enable dark mode,
+// drop this override and the ThemeSelect override from astro.config.mjs
+// and restore <ThemeSelect /> in Header.astro.
+---
+
+<script is:inline>
+	document.documentElement.dataset.theme = 'light';
+	window.StarlightThemeProvider = { updatePickers() {} };
+</script>
