@@ -7,45 +7,31 @@ head:
   # MapWidget.astro) so all content shares one measure. Selector must beat
   # Starlight's splash-width rule, `html:not([data-has-sidebar])`.
   - tag: style
-    content: ":root:not([data-has-sidebar]) { --sl-content-width: 55rem; } .content-panel { padding-block-start: 0; }"
+    content: ':root:not([data-has-sidebar]) { --sl-content-width: 55rem; } .content-panel { padding-block-start: 0; }'
 ---
 
-import { Image } from "astro:assets";
-import MapWidget from "../src/components/MapWidget.astro";
-import outline from "../src/assets/ATB_outline.png";
+import { Image } from 'astro:assets';
+import MapWidget from '../src/components/MapWidget.astro';
+import outline from '../src/assets/ATB_outline.png';
 
 <h1 class="atb-title">AllTheBacteria</h1>
 
 <div class="atb-lede">
-  AllTheBacteria is a large-scale, collaborative, open-access project that
-  assembles, annotates, and catalogs millions of bacterial and archaeal genomes
-  from public sequencing data.
+AllTheBacteria is a large-scale, collaborative, open-access project that assembles, annotates, and catalogs millions of bacterial and archaeal genomes from public sequencing data.
 </div>
 
 <MapWidget />
 
 <div class="atb-links">
-  <a
-    href="https://www.biorxiv.org/content/10.1101/2024.03.08.584059v8"
-    target="_blank"
-    rel="noopener"
-  >
-    Read the preprint
-  </a>
-  <span class="dot" aria-hidden="true">
-    ·
-  </span>
-  <a href="/browse/">Browse the data</a>
-  <span class="dot" aria-hidden="true">
-    ·
-  </span>
-  <a href="/docs/">Explore the docs</a>
+	<a href="https://www.biorxiv.org/content/10.1101/2024.03.08.584059v8" target="_blank" rel="noopener">Read the preprint</a>
+	<span class="dot" aria-hidden="true">·</span>
+	<a href="/browse/">Browse the data</a>
+	<span class="dot" aria-hidden="true">·</span>
+	<a href="/docs/">Explore the docs</a>
 </div>
 
 <div class="atb-section-break" role="separator">
-  <span></span>
-  <span></span>
-  <span></span>
+	<span></span><span></span><span></span>
 </div>
 
 ### All bacterial genomes assembled, available and searchable
@@ -61,8 +47,11 @@ file browsing, and sketchlib nearest-neighbour searches, start with the
 Please feel free to use the data, and to join us if you see analyses on your favourite species that would be valuable to all.
 
 <figure class="atb-figure not-content">
-  <div class="atb-figure-card">
-    <Image src={outline} alt="ATB analyses" />
-  </div>
-  <figcaption>Illustration of the AllTheBacteria analysis pipeline.</figcaption>
+	<div class="atb-figure-card">
+		<Image src={outline} alt="ATB analyses" />
+	</div>
+	<figcaption>
+		Illustration of the AllTheBacteria analysis pipeline. Numbers based
+		on the original 2024 release.
+	</figcaption>
 </figure>
