@@ -1,21 +1,16 @@
-# Astro Starlight build (the astro-starlight-prototype branch; the Hugo
-# config this replaced lives on main until the switchover).
 [build]
-publish = "dist"
-command = "npm run build"
+publish = "public"
+command = "hugo --gc --minify -b ${DEPLOY_PRIME_URL}"
+
+[build.environment]
+HUGO_VERSION = "0.145.0"
 
 [[redirects]]
 from = "/npmjs/*"
 to = "/npmjs/"
 status = 200
 
-# The /browse reverse proxy to atb-explorer-web.onrender.com is gone:
-# /browse is now a page of this site that imports the data browser app as a
-# runtime module from that host (src/pages/browse.astro).
-
-# /publications was removed during the migration; send old links to the
-# closest surviving page.
 [[redirects]]
-from = "/publications/*"
-to = "/resources/"
-status = 301
+from = "/browse/*"
+to = "https://atb-explorer-web.onrender.com/browse/:splat"
+status = 200

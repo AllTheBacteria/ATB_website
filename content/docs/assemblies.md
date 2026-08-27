@@ -55,39 +55,27 @@ direct URLs, exact archive names, ENA accessions, or custom pipelines.
 A gzipped FASTA assembly file for each sample is available, with the S3
 URI of the form:
 
-```text
-s3://allthebacteria-assemblies/<SAMPLE_ID>.fa.gz
-```
+    s3://allthebacteria-assemblies/<SAMPLE_ID>.fa.gz
 
 For example:
 
-```text
-s3://allthebacteria-assemblies/SAMD00000344.fa.gz
-```
+    s3://allthebacteria-assemblies/SAMD00000344.fa.gz
 
 To download to the current working directory using the aws cli:
 
-```bash
-aws s3 cp --no-sign-request s3://allthebacteria-assemblies/SAMD00000344.fa.gz .
-```
+    aws s3 cp --no-sign-request s3://allthebacteria-assemblies/SAMD00000344.fa.gz .
 
 The object URL is of the form:
 
-```text
-https://allthebacteria-assemblies.s3.eu-west-2.amazonaws.com/<SAMPLE_ID>.fa.gz
-```
+    https://allthebacteria-assemblies.s3.eu-west-2.amazonaws.com/<SAMPLE_ID>.fa.gz
 
 For example:
 
-```text
-https://allthebacteria-assemblies.s3.eu-west-2.amazonaws.com/SAMD00000344.fa.gz
-```
+    https://allthebacteria-assemblies.s3.eu-west-2.amazonaws.com/SAMD00000344.fa.gz
 
 Download with wget:
 
-```bash
-wget https://allthebacteria-assemblies.s3.eu-west-2.amazonaws.com/SAMD00000344.fa.gz
-```
+    wget https://allthebacteria-assemblies.s3.eu-west-2.amazonaws.com/SAMD00000344.fa.gz
 
 ### List of all available assemblies
 
@@ -95,27 +83,19 @@ If you want to know which assemblies are on AWS, we do not recommend
 running `ls` to find out! It will be slow. Every Monday, a list of
 current assembly files is generated. Get the latest file with:
 
-```bash
-aws s3 ls --no-sign-request s3://allthebacteria-metadata/allthebacteria-assemblies/assemblies-list/data/  | sort | tail -n1
-```
+    aws s3 ls --no-sign-request s3://allthebacteria-metadata/allthebacteria-assemblies/assemblies-list/data/  | sort | tail -n1
 
 At the time of writing, the output was:
 
-```text
-2025-03-23 17:38:59   79359181 b21b76f7-b5f1-4862-ba55-4b515bc6d05f.csv.gz
-```
+    2025-03-23 17:38:59   79359181 b21b76f7-b5f1-4862-ba55-4b515bc6d05f.csv.gz
 
 That file can be downloaded to a file called `latest.tsv.gz` with:
 
-```bash
-aws s3 cp --no-sign-request s3://allthebacteria-metadata/allthebacteria-assemblies/assemblies-list/data/b21b76f7-b5f1-4862-ba55-4b515bc6d05f.csv.gz latest.tsv.gz
-```
+    aws s3 cp --no-sign-request s3://allthebacteria-metadata/allthebacteria-assemblies/assemblies-list/data/b21b76f7-b5f1-4862-ba55-4b515bc6d05f.csv.gz latest.tsv.gz
 
 or:
 
-```bash
-wget -O latest.tsv.gz https://allthebacteria-metadata.s3.eu-west-2.amazonaws.com/allthebacteria-assemblies/assemblies-list/data/b21b76f7-b5f1-4862-ba55-4b515bc6d05f.csv.gz
-```
+    wget -O latest.tsv.gz https://allthebacteria-metadata.s3.eu-west-2.amazonaws.com/allthebacteria-assemblies/assemblies-list/data/b21b76f7-b5f1-4862-ba55-4b515bc6d05f.csv.gz
 
 That file lists all assemblies that are in the bucket
 `allthebacteria-metadata`, plus the size, md5sum, and time of upload.
@@ -129,25 +109,19 @@ the table `assembly` from the
 [SQLite metadata database](/docs/metadata_sqlite/). The TSV file can be
 downloaded with:
 
-```bash
-wget -O atb.metadata.202505.sqlite.assembly.tsv.xz https://osf.io/download/4kjh7/
-```
+    wget -O atb.metadata.202505.sqlite.assembly.tsv.xz https://osf.io/download/4kjh7/
 
 The relevant columns here are `sample_accession` and
 `assembly_accession`. For example, sample `SAMN23010837` has the
 assembly accession `ERZ26049045`. Get the URL by querying the ENA:
 
-```console
-$ wget -qO- 'https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERZ26049045&result=analysis'
-analysis_accession  submitted_bytes submitted_md5   submitted_ftp
-ERZ26049045 1785435 1e59b0bf2e684f6491d9617dee9fde2b    ftp.sra.ebi.ac.uk/vol1/analysis/ERZ260/ERZ26049045/SAMN23010837.fa.gz
-```
+    $ wget -qO- 'https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERZ26049045&result=analysis'
+    analysis_accession  submitted_bytes submitted_md5   submitted_ftp
+    ERZ26049045 1785435 1e59b0bf2e684f6491d9617dee9fde2b    ftp.sra.ebi.ac.uk/vol1/analysis/ERZ260/ERZ26049045/SAMN23010837.fa.gz
 
 and then get the assembly with:
 
-```bash
-wget ftp.sra.ebi.ac.uk/vol1/analysis/ERZ260/ERZ26049045/SAMN23010837.fa.gz
-```
+    wget ftp.sra.ebi.ac.uk/vol1/analysis/ERZ260/ERZ26049045/SAMN23010837.fa.gz
 
 ## Downloading assemblies from OSF
 
@@ -206,38 +180,30 @@ atb osf download --project AllTheBacteria/Assembly --all \
 
 Here's an example of how to get the wget commands to run:
 
-```console
-$ gunzip -c file_list.all.latest.tsv.gz | awk -F"\t" 'NR>1 {print "wget -O "$4" "$5}' | uniq | head -n3
-wget -O atb.assembly.r0.2.batch.127.tar.xz https://osf.io/download/6671719165e1de5eb5893c28/
-wget -O atb.assembly.r0.2.batch.136.tar.xz https://osf.io/download/66717ce2d835c439e94cdf1e/
-wget -O atb.assembly.r0.2.batch.625.tar.xz https://osf.io/download/6672f5a7d835c43c944ce4e8/
-```
+    $ gunzip -c file_list.all.latest.tsv.gz | awk -F"\t" 'NR>1 {print "wget -O "$4" "$5}' | uniq | head -n3
+    wget -O atb.assembly.r0.2.batch.127.tar.xz https://osf.io/download/6671719165e1de5eb5893c28/
+    wget -O atb.assembly.r0.2.batch.136.tar.xz https://osf.io/download/66717ce2d835c439e94cdf1e/
+    wget -O atb.assembly.r0.2.batch.625.tar.xz https://osf.io/download/6672f5a7d835c43c944ce4e8/
 
 If you just want one sample, for example sample SAMD00000355, then this
 is the info in
 [file_list.all.latest.tsv.gz](https://osf.io/zxfmy/files/3xs6h):
 
-```text
-sample              SAMD00000355
-sylph_species       Streptococcus pyogenes
-filename_in_tar_xz  atb.assembly.r0.2.batch.625/SAMD00000355.fa
-tar_xz              atb.assembly.r0.2.batch.625.tar.xz
-tar_xz_url          https://osf.io/download/6672f5a7d835c43c944ce4e8/
-tar_xz_md5          444ff0fc9e860ab374bdc6fe9d9bd9f5
-tar_xz_size_MB      21.5
-```
+    sample              SAMD00000355
+    sylph_species       Streptococcus pyogenes
+    filename_in_tar_xz  atb.assembly.r0.2.batch.625/SAMD00000355.fa
+    tar_xz              atb.assembly.r0.2.batch.625.tar.xz
+    tar_xz_url          https://osf.io/download/6672f5a7d835c43c944ce4e8/
+    tar_xz_md5          444ff0fc9e860ab374bdc6fe9d9bd9f5
+    tar_xz_size_MB      21.5
 
 The wget command to get the tar file would be:
 
-```bash
-wget -O atb.assembly.r0.2.batch.625.tar.xz https://osf.io/download/6672f5a7d835c43c944ce4e8/
-```
+    wget -O atb.assembly.r0.2.batch.625.tar.xz https://osf.io/download/6672f5a7d835c43c944ce4e8/
 
 Extract the FASTA with:
 
-```bash
-tar xf atb.assembly.r0.2.batch.625.tar.xz atb.assembly.r0.2.batch.625/SAMD00000355.fa
-```
+    tar xf atb.assembly.r0.2.batch.625.tar.xz atb.assembly.r0.2.batch.625/SAMD00000355.fa
 
 ## Species calls and assembly batches
 

@@ -74,24 +74,20 @@ directory `achromobacter_xylosoxidans__01/` containing FASTA files. In
 other words, running `tar xf achromobacter_xylosoxidans__01.asm.tar.xz`
 would make these files:
 
-```text
-achromobacter_xylosoxidans__01/SAMN12335635.fa
-achromobacter_xylosoxidans__01/SAMN12335634.fa
-achromobacter_xylosoxidans__01/SAMN12335574.fa
-...etc
-```
+    achromobacter_xylosoxidans__01/SAMN12335635.fa
+    achromobacter_xylosoxidans__01/SAMN12335634.fa
+    achromobacter_xylosoxidans__01/SAMN12335574.fa
+    ...etc
 
 The renamed tarball on OSF is called `atb.assembly.r0.2.batch.1.tar.xz`
 and it extracts to the directory `atb.assembly.r0.2.batch.1/`. In other
 words, running `tar xf atb.assembly.r0.2.batch.1.tar.xz` would make
 these files:
 
-```text
-atb.assembly.r0.2.batch.1/SAMN12335635.fa
-atb.assembly.r0.2.batch.1/SAMN12335634.fa
-atb.assembly.r0.2.batch.1/SAMN12335574.fa
-...etc
-```
+    atb.assembly.r0.2.batch.1/SAMN12335635.fa
+    atb.assembly.r0.2.batch.1/SAMN12335634.fa
+    atb.assembly.r0.2.batch.1/SAMN12335574.fa
+    ...etc
 
 The extracted files `SAMN12335635.fa`, `SAMN12335634.fa`,
 `SAMN12335574.fa`, ... are identical bewteen the original and renamed

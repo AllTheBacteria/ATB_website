@@ -33,9 +33,7 @@ The 202505 SQLite database is in the file
 
 Download in a terminal with:
 
-```bash
-wget -O atb.metadata.202505.sqlite.xz https://osf.io/download/my56u/
-```
+    wget -O atb.metadata.202505.sqlite.xz https://osf.io/download/my56u/
 
 It has:
 
@@ -161,9 +159,7 @@ There are five ENA metadata tables in the database:
 The `ena_20240625`, `ena_20240801`, `ena_20250506` tables are unedited
 dumps of all bacteria sequencing runs from the ENA. The query used was:
 
-```bash
-curl -Ss "https://www.ebi.ac.uk/ena/portal/api/search?result=read_run&fields=ALL&query=tax_tree(2)&format=tsv"
-```
+    curl -Ss "https://www.ebi.ac.uk/ena/portal/api/search?result=read_run&fields=ALL&query=tax_tree(2)&format=tsv"
 
 The table `ena_202505_used` is a record of the metadata for each
 sample/run from release 2025-05 from when it was retrieved as part of
@@ -418,11 +414,9 @@ for power users who want to query the SQLite database directly.
 Get all samples that have an assembly on OSF/AWS, ie this is release 0.2
 (which includes 661k) and incremental releases 2024-08, 2025-05:
 
-```bash
-atb query --has-assembly
+    atb query --has-assembly
 
-SELECT * FROM assembly WHERE asm_fasta_on_osf=1;
-```
+    SELECT * FROM assembly WHERE asm_fasta_on_osf=1;
 
 Get the sample and ENA assembly accessions of all samples in incremental
 release 2024-08 that have an ENA accession:
@@ -430,45 +424,35 @@ release 2024-08 that have an ENA accession:
 The CLI can list the relevant columns; filter out `NA` accessions
 downstream if needed:
 
-```bash
-atb query --dataset Incr_release.202408 --has-assembly \
-  --columns sample_accession,assembly_accession
+    atb query --dataset Incr_release.202408 --has-assembly \
+      --columns sample_accession,assembly_accession
 
-SELECT sample_accession,assembly_accession
-FROM assembly
-WHERE dataset="Incr_release.202408" AND assembly_accession !="NA";
-```
+    SELECT sample_accession,assembly_accession
+    FROM assembly
+    WHERE dataset="Incr_release.202408" AND assembly_accession !="NA";
 
 Get all samples with an assembly on OSF/AWS with N50 at least 1000000:
 
-```bash
-atb query --has-assembly --min-n50 1000000 \
-  --columns sample_accession,dataset,total_length,N50
+    atb query --has-assembly --min-n50 1000000 \
+      --columns sample_accession,dataset,total_length,N50
 
-SELECT assembly.sample_accession, assembly.dataset, assembly_stats.total_length, assembly_stats.N50
-FROM assembly JOIN assembly_stats ON assembly.sample_accession = assembly_stats.sample_accession
-WHERE assembly_stats.N50 > 1000000 AND assembly.asm_fasta_on_osf=1;
-```
+    SELECT assembly.sample_accession, assembly.dataset, assembly_stats.total_length, assembly_stats.N50
+    FROM assembly JOIN assembly_stats ON assembly.sample_accession = assembly_stats.sample_accession
+    WHERE assembly_stats.N50 > 1000000 AND assembly.asm_fasta_on_osf=1;
 
 Get the assembly info and ENA 20240801 metadata for sample SAMN02391170:
 
 For current sample details, use:
 
-```bash
-atb info SAMN02391170
-```
+    atb info SAMN02391170
 
 For the exact 2024-08 ENA snapshot join, use SQL:
 
-```sql
-SELECT * FROM assembly
-JOIN ena_20240801 ON assembly.sample_accession = ena_20240801.sample_accession
-WHERE assembly.sample_accession = "SAMN02391170";
-```
+    SELECT * FROM assembly
+    JOIN ena_20240801 ON assembly.sample_accession = ena_20240801.sample_accession
+    WHERE assembly.sample_accession = "SAMN02391170";
 
 In a terminal (not SQLite prompt), dump the assembly table to a
 tab-delimited file:
 
-```bash
-sqlite3 -header atb.metadata.202408.sqlite -cmd '.mode tabs' 'select * from assembly' > assembly.tsv
-```
+    sqlite3 -header atb.metadata.202408.sqlite -cmd '.mode tabs' 'select * from assembly' > assembly.tsv
