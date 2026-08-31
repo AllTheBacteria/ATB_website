@@ -1,5 +1,4 @@
-# Astro Starlight build (the astro-starlight-prototype branch; the Hugo
-# config this replaced lives on main until the switchover).
+# Astro Starlight build.
 [build]
 publish = "dist"
 command = "npm run build"
