@@ -1,7 +1,5 @@
 ---
 title: SQLite metadata
-weight: 40
-toc: true
 ---
 
 This page describes the state of the metadata for all samples as of

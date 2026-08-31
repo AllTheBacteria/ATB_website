@@ -1,7 +1,5 @@
 ---
 title: Defense systems
-weight: 90
-toc: true
 ---
 
 The results of running DefenseFinder v1.3.0 on all Enterobacterales

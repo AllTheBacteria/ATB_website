@@ -1,7 +1,5 @@
 ---
 title: WhatsGNU protein allele frequencies
-weight: 115
-toc: true
 ---
 
 WhatsGNU computes the frequency of each protein allele across all

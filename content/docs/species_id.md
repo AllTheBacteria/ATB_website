@@ -1,7 +1,5 @@
 ---
 title: Species identification
-weight: 60
-toc: true
 ---
 
 Currently the species identification consists of the information in the

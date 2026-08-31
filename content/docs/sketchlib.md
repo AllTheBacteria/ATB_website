@@ -1,7 +1,5 @@
 ---
 title: Sequence distances with sketchlib
-weight: 145
-toc: true
 ---
 
 Sketchlib is a tool for rapid sketching and distance estimation, which is

@@ -1,7 +1,5 @@
 ---
 title: Phylogeny
-weight: 100
-toc: true
 ---
 
 ## Phylogeny

@@ -1,7 +1,5 @@
 ---
 title: Sequence alignment with LexicMap
-weight: 140
-toc: true
 ---
 
 [LexicMap](https://github.com/shenwei356/LexicMap) is a nucleotide

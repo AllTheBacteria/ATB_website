@@ -1,7 +1,5 @@
 ---
 title: Biosynthetic gene clusters
-weight: 100
-toc: true
 ---
 
 ## GECCO

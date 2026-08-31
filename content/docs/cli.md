@@ -1,7 +1,5 @@
 ---
 title: Command line tool
-weight: 15
-toc: true
 ---
 
 The `atb` command line tool is the recommended way to query

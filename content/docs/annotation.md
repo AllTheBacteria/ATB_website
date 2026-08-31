@@ -1,7 +1,5 @@
 ---
 title: Annotation
-weight: 70
-toc: true
 ---
 
 ## Bakta

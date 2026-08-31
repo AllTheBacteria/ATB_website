@@ -1,7 +1,5 @@
 ---
 title: FAQ
-weight: 170
-toc: true
 ---
 
 ## Can I freely use the data?

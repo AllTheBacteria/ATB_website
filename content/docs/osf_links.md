@@ -1,7 +1,5 @@
 ---
 title: OSF links
-weight: 30
-toc: false
 ---
 
 This page pairs each documentation section with the corresponding OSF

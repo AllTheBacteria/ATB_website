@@ -1,7 +1,5 @@
 ---
 title: Online data browser
-weight: 12
-toc: true
 ---
 
 AllTheBacteria provides an [online data browser](/browse) for user-friendly exploration of the dataset. The data browser features the metadata and AMR modules of the AllTheBacteria dataset, based on the 2025-05 incremental release.

@@ -1,7 +1,5 @@
 ---
 title: Migration from EBI FTP to OSF
-weight: 190
-toc: true
 ---
 
 This page has details of moving the data originally hosted at the [EBI

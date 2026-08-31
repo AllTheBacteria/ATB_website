@@ -1,7 +1,5 @@
 ---
 title: Hypothetical protein structures
-weight: 110
-toc: true
 ---
 
 **Note: All structures available here have been integrated into the

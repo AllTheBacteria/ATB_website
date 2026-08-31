@@ -1,7 +1,5 @@
 ---
 title: Antimicrobial resistance
-weight: 80
-toc: true
 ---
 
 ## AMRFinderPlus

@@ -1,7 +1,5 @@
 ---
 title: Archaea
-weight: 130
-toc: true
 ---
 
 In addition to bacteria, we have processed archaea samples through the

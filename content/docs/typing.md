@@ -1,7 +1,5 @@
 ---
 title: Species specific typing
-weight: 120
-toc: true
 ---
 
 ## Summary

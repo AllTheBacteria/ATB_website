@@ -1,7 +1,5 @@
 ---
 title: Metadata and QC
-weight: 20
-toc: true
 ---
 
 Metadata files are all stored on OSF in the AllTheBacteria [Metadata

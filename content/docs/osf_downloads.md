@@ -1,7 +1,5 @@
 ---
 title: Browsing and downloading from OSF
-weight: 160
-toc: true
 ---
 
 The data are all hosted on OSF: <https://osf.io/xv7q9/>

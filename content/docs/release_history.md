@@ -1,7 +1,5 @@
 ---
 title: Release history
-weight: 180
-toc: true
 ---
 
 ## Release Version 0.1

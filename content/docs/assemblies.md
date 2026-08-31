@@ -1,7 +1,5 @@
 ---
 title: Assemblies
-weight: 50
-toc: true
 ---
 
 ## Summary

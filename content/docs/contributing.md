@@ -1,7 +1,5 @@
 ---
 title: Contributing to AllTheBacteria
-weight: 150
-toc: true
 ---
 
 We welcome contributions to AllTheBacteria. Please read on for
