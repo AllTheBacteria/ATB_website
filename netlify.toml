@@ -3,14 +3,6 @@
 publish = "dist"
 command = "npm run build"
 
-[[redirects]]
-from = "/npmjs/*"
-to = "/npmjs/"
-status = 200
-
-# The /browse reverse proxy to atb-explorer-web.onrender.com is gone:
-# /browse is now a page of this site that imports the data browser app as a
-# runtime module from that host (src/pages/browse.astro).
 
 # /publications was removed during the migration; send old links to the
 # closest surviving page.
