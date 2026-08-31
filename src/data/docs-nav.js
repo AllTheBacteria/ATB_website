@@ -1,7 +1,6 @@
 // Single source of truth for docs page order. Consumed by both the
 // Starlight sidebar (astro.config.mjs) and the /docs/ index page
 // (src/components/DocsIndex.astro), so the two never drift.
-// This list is the canonical order of the docs pages.
 export const docsPages = [
 	'overview',
 	'data_browser',
