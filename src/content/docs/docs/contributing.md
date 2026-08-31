@@ -174,22 +174,19 @@ Notes on the documentation:
 
 - this should be instructions for any user who will want to download
   your analysis files and use them.
-- The documentation is in the `content/docs/` folder of the
+- The documentation is in the `src/content/docs/docs/` folder of the
   `ATB_website` repository.
 - If you are adding a new page, add a new Markdown file in
-  `content/docs/`, with Hugo front matter including `title`, `weight`,
-  and `toc`. Here, `weight` is used for page ordering in the docs
-  navigation, not font styling. For example, a new page might be
-  `content/docs/foo.md`.
+  `src/content/docs/docs/`, with front matter containing a `title`. For
+  example, a new page might be `src/content/docs/docs/foo.md`.
 - The page `title` is what will appear in the docs navigation. Please
   name this sensibly.
-- The `weight` in the front matter controls the order shown in the docs
-  navigation. If you add a new file, give it a weight that keeps the
-  section order sensible. We currently use gaps such as 10, 20, 30, so
-  you do not have to renumber every page: for example, inserting a page
-  at 15 between 10 and 20 makes later additions easier.
-- You can build a local copy of the documentation by running
-  `hugo`, or preview it locally with `hugo server`.
+- The order of pages in the docs navigation is the list in
+  `src/data/docs-nav.js`. If you add a new page, add its filename (minus
+  the `.md` extension) to that list wherever it keeps the section order
+  sensible.
+- You can preview the documentation locally by running `npm install`
+  and then `npm run dev`, or build the full site with `npm run build`.
 - documentation changes should be reviewed and merged via a pull request
   to `ATB_website`, separately from the analysis/reproducibility pull
   request to `AllTheBacteria`.
