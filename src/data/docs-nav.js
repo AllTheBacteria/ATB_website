@@ -1,7 +1,6 @@
 // Single source of truth for docs page order. Consumed by both the
 // Starlight sidebar (astro.config.mjs) and the /docs/ index page
 // (src/components/DocsIndex.astro), so the two never drift.
-// Order mirrors the Hugo `weight` frontmatter values from content/docs/.
 export const docsPages = [
 	'overview',
 	'data_browser',

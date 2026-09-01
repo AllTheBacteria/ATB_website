@@ -69,8 +69,8 @@ export default defineConfig({
 				},
 			},
 			// Docs-internal navigation only; site sections live in the navbar
-			// (src/components/Header.astro). Order mirrors the Hugo `weight`
-			// frontmatter values from content/docs/.
+			// (src/components/Header.astro). Order comes from
+			// src/data/docs-nav.js.
 			sidebar: [
 				// Site sections, shown only in the mobile drawer (the desktop
 				// sidebar stays docs-only; these live in the navbar there).
