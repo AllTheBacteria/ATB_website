@@ -7,8 +7,9 @@ const { entry } = Astro.locals.starlightRoute;
 const isDocs = entry.id.startsWith('docs/');
 // The homepage opens README-style with its tagline heading; the site
 // name is already in the navbar, so skip the h1 there entirely. The
-// data browser (/browse) brings its own app header, so skip it there too.
-const hasOwnTitle = ['index', '', 'browse'].includes(entry.id);
+// data browser (/browse) and Bactry (/bactry) bring their
+// own app headers, so skip it there too.
+const hasOwnTitle = ['index', '', 'browse', 'bactry'].includes(entry.id);
 ---
 
 {

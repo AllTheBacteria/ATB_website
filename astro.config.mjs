@@ -76,6 +76,7 @@ export default defineConfig({
 				// sidebar stays docs-only; these live in the navbar there).
 				{ label: 'Home', link: '/', attrs: { class: 'md:sl-hidden' } },
 			{ label: 'Browse data', link: '/browse/', attrs: { class: 'md:sl-hidden' } },
+				{ label: 'Bactry', link: '/bactry/', attrs: { class: 'md:sl-hidden' } },
 				{ label: 'Resources', slug: 'resources', attrs: { class: 'md:sl-hidden' } },
 				// Docs pages in order, shared with the /docs/ index page.
 				...docsPages.map((slug) => ({ slug: `docs/${slug}` })),
