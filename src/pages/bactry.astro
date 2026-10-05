@@ -1,0 +1,69 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import RuntimeEmbed from '../components/RuntimeEmbed.astro';
+
+// Bactry is a gene family graph over the AllTheBacteria genomes,
+// maintained in the bactry repo. Its build publishes a self contained
+// ES module with the same contract as the data browser,
+// `mount(el, { assetBase }) -> unmount`, served next to its API. App
+// deploys go live here immediately, with no rebuild of this site.
+//
+// PUBLIC_BACTRY_ORIGIN overrides the origin for local testing against a
+// locally served bundle.
+const APP_ORIGIN = import.meta.env.PUBLIC_BACTRY_ORIGIN ?? 'https://bactry.genspectrum.org';
+const APP_BASE = `${APP_ORIGIN}/embed/`;
+const APP_JS = `${APP_BASE}bactry.js`;
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Bactry',
+		description: 'Query gene families, gene order and alleles across AllTheBacteria genomes',
+		template: 'splash',
+		tableOfContents: false,
+		// The app shell has no text of its own, keep it out of the search index.
+		pagefind: false,
+		// RuntimeEmbed provides the stylesheet link and layer pin; these two
+		// just warm the connection and the module fetch.
+		head: [
+			{ tag: 'link', attrs: { rel: 'preconnect', href: APP_ORIGIN, crossorigin: 'anonymous' } },
+			// Module imports are CORS-mode requests; the preload must match.
+			{ tag: 'link', attrs: { rel: 'modulepreload', href: APP_JS, crossorigin: 'anonymous' } },
+		],
+	}}
+>
+	<RuntimeEmbed
+		js={APP_JS}
+		css={`${APP_BASE}bactry.css`}
+		assetBase={APP_BASE}
+		id="bactry"
+		errorText="Bactry failed to load. Please check your connection and reload the page."
+	/>
+</StarlightPage>
+
+<style is:global>
+	/* This stylesheet only loads on /bactry. The app is a workbench with
+	   its own scrolling panes: give it the full width and the full height
+	   below the site header. Specificity must beat Starlight's own
+	   splash-width rule, `html:not([data-has-sidebar])` in Page.astro. */
+	:root:not([data-has-sidebar]) {
+		--sl-content-width: 100%;
+	}
+	.content-panel {
+		padding: 0;
+	}
+	/* Starlight pads main with --sl-main-pad from a rule of equal
+	   specificity that can follow this one, so name the parent too. */
+	.main-pane main {
+		padding: 0;
+	}
+	#bactry {
+		margin-top: 0;
+		height: calc(100dvh - var(--sl-nav-height));
+	}
+	/* The app already fills the viewport; the page links of the footer
+	   would only add a scroll step below it. */
+	footer {
+		display: none;
+	}
+</style>
